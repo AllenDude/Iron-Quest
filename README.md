@@ -1,7 +1,8 @@
 # Iron Quest — Calisthenics RPG
 
 A mobile-first installable PWA that turns your 4-day calisthenics split into an RPG
-progression system. Fully offline, no backend, no build step — plain HTML/CSS/JS.
+progression system. Fully offline, no backend, no build step — plain HTML/CSS/JS,
+everything in one flat folder.
 
 ## Running it
 
@@ -23,6 +24,24 @@ of this folder, free. Once it's live:
 - **Windows/macOS (Chrome/Edge):** address bar → install icon
 
 After the first load, the app shell is cached — it keeps working with no signal.
+
+## Files
+
+Everything lives directly in this folder, no subfolders:
+
+```
+index.html            entry point / shell
+styles.css             all styling + the gym color theme
+config.js               workout plan data (edit this to change the split)
+store.js                 localStorage read/write
+engine.js               XP, quests, achievements, progression logic
+app.js                   router + rendering + session logic
+manifest.json          PWA metadata
+service-worker.js  offline caching
+icon-192.png, icon-512.png, icon-512-maskable.png, icon-180.png, favicon-32.png
+                                app icons, generated from logo-source.png
+logo-source.png    original logo artwork (not used at runtime)
+```
 
 ## Data
 
@@ -46,6 +65,13 @@ integration.
 
 ## Editing the workout plan
 
-All exercise definitions live in `js/config.js` (`WORKOUT_PLAN`). Rep ranges, drop
+All exercise definitions live in `config.js` (`WORKOUT_PLAN`). Rep ranges, drop
 sets, and variations are data, not hardcoded UI — change the numbers there and the
 logging screens update automatically.
+
+## Theme
+
+Color tokens live at the top of `styles.css` under `:root` (dark, default) and
+`:root[data-theme="light"]`. Both variants are wired to the same steel/ember/volt
+accent names, so retheming means editing values there, not chasing colors through
+the rest of the file.

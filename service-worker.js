@@ -1,17 +1,18 @@
-const CACHE_NAME = "iron-quest-v2";
+const CACHE_NAME = "iron-quest-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./css/styles.css",
-  "./js/config.js",
-  "./js/store.js",
-  "./js/engine.js",
-  "./js/app.js",
-  "./icons/icon-192.png",
-  "./icons/icon-512.png",
-  "./icons/icon-512-maskable.png",
-  "./icons/icon-180.png",
+  "./styles.css",
+  "./config.js",
+  "./store.js",
+  "./engine.js",
+  "./app.js",
+  "./icon-192.png",
+  "./icon-512.png",
+  "./icon-512-maskable.png",
+  "./icon-180.png",
+  "./favicon-32.png",
 ];
 
 self.addEventListener("install", (event) => {
